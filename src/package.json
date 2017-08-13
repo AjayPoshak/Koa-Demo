@@ -1,0 +1,17 @@
+{
+  "name": "koademo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "mongodb": "^2.2.31",
+    "nodemon": "^1.11.0"
+  }
+}
