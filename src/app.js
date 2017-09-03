@@ -7,21 +7,14 @@ const router = new Router();
 const logger = require('koa-logger');
 const bodyParser = require('koa-bodyparser');
 
-const books = require('./controllers/books');
 
 const db = require('./db');
-const connect = db.connect(app);
+const connect = db.connect();
 
 app.use(bodyParser());
 app.use(logger());
 
-router.get('/', async(ctx) => {
-    ctx.body = await ctx.app.booksData.find().toArray();
-});
-
-router.post('/book', async(ctx, next) => {
-    ctx.body = await ctx.app.booksData.insert(ctx.request.body, {w:1});
-});
+require('./routes/index')(router);
 
 app
     .use(router.routes())
