@@ -2,7 +2,6 @@ const books  = require('../modals/books').getInstance();
 
 module.exports.list = async(ctx) => {
     try {
-        console.log('This is the list');
         ctx.body = await books.listBooks();
     } catch(e) {
         console.log(e);
