@@ -8,7 +8,7 @@ const logger = require('koa-logger');
 const bodyParser = require('koa-bodyparser');
 
 
-const db = require('./db');
+const db = require('./global/bootstrap');
 const connect = db.connect();
 
 app.use(bodyParser());
