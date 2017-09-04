@@ -1,6 +1,8 @@
 const Koa = require('koa');
 const app = new Koa();
 
+require('dotenv').config({ path: './dev.env' })
+
 const Router = require('koa-router');
 const router = new Router();
 
@@ -10,6 +12,8 @@ const bodyParser = require('koa-bodyparser');
 
 const db = require('./global/bootstrap');
 const connect = db.connect();
+
+
 
 app.use(bodyParser());
 app.use(logger());
